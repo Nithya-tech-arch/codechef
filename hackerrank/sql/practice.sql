@@ -31,3 +31,25 @@ on ci.COUNTRYCODE=co.CODE
 where co.CONTINENT='Africa';
 
 
+
+//Basic Joins
+
+
+Select  co.CONTINENT, floor(AVG(ci.POPULATION)) as avg_cityPopulation from COUNTRY co
+inner join CITY ci on
+ci.COUNTRYCODE=co.CODE
+group by co.CONTINENT;
+
+
+
+
+//Advanced Selects
+
+
+Select Name || '(' || SUBSTR(Occupation,1,1) || ')'
+from OCCUPATIONS order by Name ASC;
+
+Select 'There are a total of ' || count(occupation) || ' ' ||  lower(occupation)||'s.'
+from OCCUPATIONS group by occupation order by count(occupation),lower(occupation);
+
+
