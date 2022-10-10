@@ -53,3 +53,8 @@ Select 'There are a total of ' || count(occupation) || ' ' ||  lower(occupation)
 from OCCUPATIONS group by occupation order by count(occupation),lower(occupation);
 
 
+
+//The Blunder
+
+
+Select Ceil(Avg(Salary))-Floor(Avg(replace(Salary, 0))) from EMPLOYEES;
