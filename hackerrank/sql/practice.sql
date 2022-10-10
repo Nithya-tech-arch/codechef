@@ -58,3 +58,13 @@ from OCCUPATIONS group by occupation order by count(occupation),lower(occupation
 
 
 Select Ceil(Avg(Salary))-Floor(Avg(replace(Salary, 0))) from EMPLOYEES;
+
+
+
+//Top Earner 
+
+//Error in part of output
+
+Select max(earnings) as maximum_earning, count(*) from 
+((Select (c.months * c.salary) as earnings from Employee c)a 
+ group by earnings where order by earnings DESC) where rownum=1;
